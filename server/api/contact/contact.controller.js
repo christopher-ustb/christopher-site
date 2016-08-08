@@ -68,6 +68,7 @@ export function index(req, res) {
 
 // Gets a single Contact from the DB
 export function show(req, res) {
+  console.log(req.params.id);
   return Contact.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
