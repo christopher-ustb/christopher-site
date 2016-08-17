@@ -6,12 +6,15 @@ export function responseWithResult(res, statusCode) {
     if (entity) {
       res.status(statusCode).json(entity);
     }
+    return entity;
   };
 }
 
 export function handleError(res, statusCode) {
   statusCode = statusCode || 500;
   return function(err) {
+    console.error(err);
     res.status(statusCode).send(err);
+    return err;
   };
 }
