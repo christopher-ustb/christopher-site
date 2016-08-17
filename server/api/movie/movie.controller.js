@@ -16,11 +16,6 @@ export function page(req, res){
 export function get(req, res) {
   const id = req.params.id;
   console.log('movie id:', id);
-  const movie = {
-    id: id,
-    name: 'batman dark knight',
-    star: 8.5
-  };
   Movie.findById(id).exec().then(handler.responseWithResult(res)).catch(handler.handleError(res, 404));
 }
 
