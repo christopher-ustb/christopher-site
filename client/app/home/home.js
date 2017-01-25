@@ -2,8 +2,8 @@
 
 angular.module('christopherSiteApp')
   .config(function($stateProvider) {
-    $stateProvider.state('main', {
-      url: '/main',
-      template: '<main></main>'
+    $stateProvider.state('home', {
+      url: '/',
+      template: '<home></home>'
     });
   });
